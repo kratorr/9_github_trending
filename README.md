@@ -2,7 +2,7 @@
 
 This program displays in the console 20 most popular projects (by the number of stars) for the last week with count of  open issues and links.
 
- How to Install
+# How to Install
 
 Python 3 should be already installed. Then use pip (or pip3 if there is a conflict with old Python 2 setup) to install dependencies:
 
