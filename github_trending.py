@@ -2,7 +2,7 @@ import requests
 from datetime import date, timedelta
 
 
-def time_delta(days=7):
+def get_time_delta(days=7):
     date_days_ago = date.today() - timedelta(days)
     return date.isoformat(date_days_ago)
 
@@ -17,18 +17,26 @@ def get_trending_repositories(from_date):
     return trending_repositories.json()
 
 
+def get_open_issues_amount(repo_owner, repo_name):
+    url = "https://api.github.com/repos/{owner}/{repo}/issues".format(
+        owner=repo_owner, repo=repo_name
+    )
+    list_of_issues = requests.get(url)
+    return len(list_of_issues.json())
+
+
 if __name__ == "__main__":
     count_repositories = 20
-    trending_repositories_dict = get_trending_repositories(time_delta(days=7))
-    trending_repositories_list = trending_repositories_dict["items"]
-    for number, repo in enumerate(trending_repositories_list):
-        if number == count_repositories:
-            break
+    trending_repo = get_trending_repositories(get_time_delta(days=7))["items"]
+    for repo in trending_repo[:count_repositories]:
         stargazers_count = repo["stargazers_count"]
-        open_issues_count = repo["open_issues_count"]
+        repo_owner = repo["owner"]["login"]
+        repo_name = repo["name"]
         repo_url = repo["html_url"]
+        open_issues_count = get_open_issues_amount(repo_owner, repo_name)
         print(
             "Stars:", stargazers_count,
             "Open issues:", open_issues_count,
-            "URL:", repo_url
+            "URL:", repo_url,
         )
+
