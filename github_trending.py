@@ -11,18 +11,18 @@ def get_trending_repositories(from_date):
     params = dict(
         sort="stars", order="desc", q="created:>{date}".format(date=from_date)
     )
-    trending_repositories = requests.get(
+    github_response = requests.get(
         "https://api.github.com/search/repositories", params=params
     )
-    return trending_repositories.json()
+    return github_response.json()
 
 
 def get_open_issues_amount(repo_owner, repo_name):
     url = "https://api.github.com/repos/{owner}/{repo}/issues".format(
         owner=repo_owner, repo=repo_name
     )
-    open_issues = requests.get(url)
-    return len(open_issues.json())
+    github_response = requests.get(url)
+    return len(github_response.json())
 
 
 if __name__ == "__main__":
