@@ -21,6 +21,7 @@ $ python3 github_trending.py
 Example of script launch on Linux, Python 3.5:
 ```bash
 $ python3 github_trending.py 
+Top 20 trending repositories on GitHub at last week
 Stars: 2046 Open issues: 3 URL: https://github.com/llSourcell/Learn_Machine_Learning_in_3_Months
 Stars: 831 Open issues: 3 URL: https://github.com/NoelFB/Celeste
 Stars: 795 Open issues: 0 URL: https://github.com/gocn/knowledge
