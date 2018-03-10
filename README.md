@@ -1,11 +1,11 @@
 # Github Trends
 
-This program displays in the console 20 most popular projects (by the number of stars) for the last week with count of  open issues and links.
+This program displays in the console 20 most popular projects (by the number of stars) for the last week with count of  open issues and 
+links.
 
 # How to Install
 
 Python 3 should be already installed. Then use pip (or pip3 if there is a conflict with old Python 2 setup) to install dependencies:
-
 pip install -r requirements.txt # alternatively try pip3
 
 Remember, it is recommended to use virtualenv/venv for better isolation.
@@ -18,9 +18,8 @@ How to run:
 ```bash
 $ python3 github_trending.py
 ```
-Example of script launch on Linux, Python 3.5:
+Output :
 ```bash
-$ python3 github_trending.py 
 Top 20 trending repositories on GitHub at last week
 Stars: 2046 Open issues: 3 URL: https://github.com/llSourcell/Learn_Machine_Learning_in_3_Months
 Stars: 831 Open issues: 3 URL: https://github.com/NoelFB/Celeste
@@ -42,7 +41,6 @@ Stars: 176 Open issues: 4 URL: https://github.com/qiu8310/minapp
 Stars: 170 Open issues: 0 URL: https://github.com/peterbourgon/caspaxos
 Stars: 167 Open issues: 4 URL: https://github.com/Srar/MemcacheDos
 Stars: 160 Open issues: 2 URL: https://github.com/game-helper/meituan
-
 ```
 
 # Project Goals
