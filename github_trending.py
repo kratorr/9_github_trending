@@ -28,6 +28,7 @@ def get_open_issues_amount(repo_owner, repo_name):
 if __name__ == "__main__":
     count_repositories = 20
     trending_repo = get_trending_repositories(get_time_delta(days=7))["items"]
+    print("Top 20 trending repositories on GitHub at last week")
     for repo in trending_repo[:count_repositories]:
         stargazers_count = repo["stargazers_count"]
         repo_owner = repo["owner"]["login"]
@@ -39,4 +40,3 @@ if __name__ == "__main__":
             "Open issues:", open_issues_count,
             "URL:", repo_url,
         )
-
